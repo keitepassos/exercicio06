@@ -15,11 +15,23 @@ export class AppComponent {
       title: 'Home',
       url: '/home',
       icon: 'home'
-    },
+    },        
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'People',
+      url: '/people',
+      icon: 'people'
+    }
+    ,
+    {
+      title: 'Planets',
+      url: '/planets',
+      icon: 'planets'
+    }
+    ,
+    {
+      title: 'StartShips',
+      url: '/startships',
+      icon: 'startships'
     }
   ];
 
