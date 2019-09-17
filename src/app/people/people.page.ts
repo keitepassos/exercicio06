@@ -8,18 +8,22 @@ import { HTTP } from '@ionic-native/http/ngx';
 })
 export class PeoplePage implements OnInit {
 
-  json : string;
-  persons : string;
+  json : any ;
+  obj : any ;
+  heroes : any ;
+
   constructor(private http : HTTP) { 
-    this.consultarPeople();
+    //this.consultarPeople();
   }
 
   consultarPeople(){
-    let url : string = "https://swapi.co/api/people/?format=json"
-    console.log("Chamando "+url)
+    let url : string = "https://swapi.co/api/people/?format=json";
+    console.log("Chamando "+url);
     this.http.get(url,{},{})
       .then(data => {
         this.json = data.data;
+        this.obj = data;
+        this.heroes = this.obj.data;
       })
       .catch(error => {
         console.log(error.status);
@@ -29,6 +33,7 @@ export class PeoplePage implements OnInit {
   }
 
   ngOnInit() {
+    this.consultarPeople();
   }
 
 }
