@@ -26,6 +26,11 @@ export class AppComponent {
       title: 'Planets',
       url: '/planets',
       icon: 'planets'
+    },
+    {
+      title: 'Films',
+      url: '/films',
+      icon: 'films'
     }
     ,
     {
