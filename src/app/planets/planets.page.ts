@@ -12,7 +12,7 @@ export class PlanetsPage implements OnInit {
 
 
   consultaPlanets(planet:string){
-    let url:string ="https://viacep.com.br/ws/17533378/json/";
+    let url:string ="https://swapi.co/api/people/?format=json";
     console.log(url)
     this.http.get(url,{},{})
     .then(data=>{this.result = data.data

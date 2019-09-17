@@ -5,6 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-fab-button (click)="consultaPlanets('')">clique</ion-fab-button>
+  <ion-fab-button (click)="consultaPlanets('')">c</ion-fab-button>
+
+
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let r of result">
+      <ion-item >
+        
+        <h2>{{ r.count }} {{ r.next }}</h2>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
 </ion-content>
-<p>{{result}}</p>
