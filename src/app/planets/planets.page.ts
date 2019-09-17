@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @Component({
   selector: 'app-planets',
@@ -6,8 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./planets.page.scss'],
 })
 export class PlanetsPage implements OnInit {
+  result:string;
+  constructor(private http:HTTP) { }
 
-  constructor() { }
+
+  consultaPlanets(planet:string){
+    let url:string ="https://viacep.com.br/ws/17533378/json/";
+    console.log(url)
+    this.http.get(url,{},{})
+    .then(data=>{this.result = data.data
+    }).catch(error=>{
+      console.log(error.status)
+      console.log(error.error)
+      console.log(error.headers)
+    })
+  }
+
 
   ngOnInit() {
   }
