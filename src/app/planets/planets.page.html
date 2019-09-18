@@ -1,21 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title><ion-icon name="planet"></ion-icon>Planets</ion-title>
+    <ion-title><ion-icon name="planet"></ion-icon>Planets keite</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-fab-button (click)="consultaPlanets('')">c</ion-fab-button>
+ <!-- <ion-fab-button (click)="consultaPlanets('')">c</ion-fab-button>-->
 
-
-
-  <ion-list>
-    <ion-item-sliding *ngFor="let r of result">
-      <ion-item >
-        
-        <h2>{{ r.count }} {{ r.next }}</h2>
-      </ion-item>
-    </ion-item-sliding>
-  </ion-list>
+ <ion-list>
+  <ion-item *ngFor="let p of planetas.results" >
+    <ion-label>{{p?.name}}</ion-label>
+  </ion-item>
+</ion-list>
 
 </ion-content>
