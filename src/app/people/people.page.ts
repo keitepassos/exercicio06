@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HTTP } from '@ionic-native/http/ngx';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-people',
   templateUrl: './people.page.html',
@@ -8,28 +13,25 @@ import { HTTP } from '@ionic-native/http/ngx';
 })
 export class PeoplePage implements OnInit {
 
-  json : any ;
-  obj : any ;
-  heroes : any ;
+  public actors : Array<Object> = []  ;
 
-  constructor(private http : HTTP) { 
+  constructor(private http: HttpClient, private httpModule : HttpClientModule) { 
     //this.consultarPeople();
   }
 
   consultarPeople(){
     let url : string = "https://swapi.co/api/people/?format=json";
     console.log("Chamando "+url);
-    this.http.get(url,{},{})
-      .then(data => {
-        this.json = data.data;
-        this.obj = data;
-        this.heroes = this.obj.data;
-      })
-      .catch(error => {
-        console.log(error.status);
-        console.log(error.error);
-        console.log(error.headers);
-      });   
+    this.http.get(url).subscribe(
+      data => {
+        const obj_json = (data as any);
+        this.actors = obj_json;
+        console.log(obj_json);
+        console.log(this.actors);
+      }, error => {
+        console.log(error); 
+      }
+    );
   }
 
   ngOnInit() {
