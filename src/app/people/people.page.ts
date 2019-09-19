@@ -3,7 +3,7 @@ import { HTTP } from '@ionic-native/http/ngx';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -14,6 +14,7 @@ import { map } from 'rxjs/operators';
 export class PeoplePage implements OnInit {
 
   public actors : Array<Object> = []  ;
+  public actore : Array<Object> = []  ;
 
   constructor(private http: HttpClient, private httpModule : HttpClientModule) { 
     //this.consultarPeople();
@@ -30,6 +31,21 @@ export class PeoplePage implements OnInit {
         console.log(this.actors);
       }, error => {
         console.log(error); 
+      }
+    );
+  }
+
+  detalhesPeople(url:string){
+    //let url : string = "https://swapi.co/api/people/?format=json";
+    console.log("Chamando "+url)
+    this.http.get(url).subscribe(
+      data => {
+        const obj_json = (data as any)
+        this.actore = obj_json
+        console.log(obj_json)
+        console.log(this.actore)
+      }, error => {
+        console.log(error)
       }
     );
   }
