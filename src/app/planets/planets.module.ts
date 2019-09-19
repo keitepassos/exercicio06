@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PlanetsPage } from './planets.page';
 
+import { HTTP } from '@ionic-native/http/ngx';
+
 const routes: Routes = [
   {
     path: '',
