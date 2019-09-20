@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { Resolve, ActivatedRouteSnapshot,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-card-details',
@@ -9,7 +9,14 @@ import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 })
 export class CardDetailsPage implements OnInit {
 
-  constructor() { }
+  actor = null;
+
+  constructor(private activatedRoute: ActivatedRoute) { 
+    this.actor =  this.activatedRoute.snapshot.paramMap.get('actor');
+    let dataObj = JSON.parse(this.actor);
+    console.log(this.actor);
+    console.log(typeof(dataObj));
+  }
 
   ngOnInit() {
   }

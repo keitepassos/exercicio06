@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-people',
@@ -16,7 +17,7 @@ export class PeoplePage implements OnInit {
   public actors : Array<Object> = []  ;
   public actore : Array<Object> = []  ;
 
-  constructor(private http: HttpClient, private httpModule : HttpClientModule) { 
+  constructor(private http: HttpClient, private httpModule : HttpClientModule, public router: Router) { 
     //this.consultarPeople();
   }
 
@@ -48,6 +49,12 @@ export class PeoplePage implements OnInit {
         console.log(error)
       }
     );
+  }
+
+  getActorOBJ(obj:any){
+
+    let dataString = JSON.stringify(obj);
+    this.router.navigate(['card-details',dataString])
   }
 
   ngOnInit() {
