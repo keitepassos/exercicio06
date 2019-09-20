@@ -16,13 +16,15 @@ export class PeoplePage implements OnInit {
 
   public actors : Array<Object> = []  ;
   public actore : Array<Object> = []  ;
+  public url : string;
 
   constructor(private http: HttpClient, private httpModule : HttpClientModule, public router: Router) { 
     //this.consultarPeople();
+    this.url = "https://swapi.co/api/people/?format=json";
   }
 
-  consultarPeople(){
-    let url : string = "https://swapi.co/api/people/?format=json";
+  consultarPeople(pUrl:string){
+    let url : string = pUrl;
     console.log("Chamando "+url);
     this.http.get(url).subscribe(
       data => {
@@ -58,7 +60,7 @@ export class PeoplePage implements OnInit {
   }
 
   ngOnInit() {
-    this.consultarPeople();
+    this.consultarPeople(this.url);
   }
 
 }
