@@ -1,21 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>card_details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          <ion-card-title>Card Title</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </ion-card-content>
+        <ion-item>
+            <ion-label>Name: </ion-label>{{actor.name}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Birth Year: </ion-label>{{actor.birth_year}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Eye Collor: </ion-label>{{actor.eye_color}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Gender: </ion-label>{{actor.gender}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Height: </ion-label>{{actor.height}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Mass: </ion-label>{{actor.mass}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Hair Color: </ion-label>{{actor.hair_color}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Skin Color: </ion-label>{{actor.skin_color}}
+        </ion-item>
       </ion-card>
-
-      {{actor}}
+      
 </ion-content>

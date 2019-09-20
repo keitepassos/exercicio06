@@ -14,6 +14,7 @@ export class CardDetailsPage implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { 
     this.actor =  this.activatedRoute.snapshot.paramMap.get('actor');
     let dataObj = JSON.parse(this.actor);
+    this.actor = dataObj;
     console.log(this.actor);
     console.log(typeof(dataObj));
   }
