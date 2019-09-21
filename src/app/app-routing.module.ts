@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'films', loadChildren: './films/films.module#FilmsPageModule' },
   { path: 'startships', loadChildren: './startships/startships.module#StartshipsPageModule' },
   { path: 'planets', loadChildren: './planets/planets.module#PlanetsPageModule' },
-  { path: 'card-details/:actor', loadChildren: './card-details/card-details.module#CardDetailsPageModule' }
+  { path: 'card-details/:actor', loadChildren: './card-details/card-details.module#CardDetailsPageModule' },
+  { path: 'card-details-startship/:startship', loadChildren: './card-details-startship/card-details-startship.module#CardDetailsStartshipPageModule' }
 ];
 
 @NgModule({

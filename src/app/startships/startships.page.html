@@ -3,10 +3,29 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title><ion-icon name="jet"></ion-icon>Startchips</ion-title>
+        <ion-title><ion-icon name="jet"></ion-icon>Startships</ion-title>
     </ion-toolbar>
   </ion-header>
-
-<ion-content>
-
-</ion-content>
+  <ion-content> 
+    <ion-list>
+      <ion-item *ngFor="let startship of startships.results" >
+        <ion-label (click)="getActorOBJ(startship)">
+            {{startship?.name}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="secondary">
+        <ion-button  *ngIf="startships.previous != null" color="primary" (click)="consultarPeople(startships.previous)">
+          Previous Page
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button *ngIf="startships.next != null" color="secondary" (click)="consultarPeople(startships.next)">
+          Next Page
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer> 

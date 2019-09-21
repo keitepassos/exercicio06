@@ -33,6 +33,17 @@
         <ion-item>
             <ion-label>Skin Color: </ion-label>{{actor.skin_color}}
         </ion-item>
-      </ion-card>
+
+        <ion-row>
+            <ion-label>Starships: </ion-label>
+            <ion-list *ngFor="let starship of actor.starships"> 
+                    <ion-item>
+                            <ion-button >{{starship}}</ion-button>
+                    </ion-item>
+            </ion-list>
+        </ion-row>
+
+    </ion-card>
+      
       
 </ion-content>
