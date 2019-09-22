@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-item>
+            <ion-label>Name: </ion-label>{{p.name}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Rotation Period: </ion-label>{{p.rotation_period}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Orbital Period: </ion-label>{{p.orbital_period}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Diameter: </ion-label>{{p.diameter}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Climate: </ion-label>{{p.climate}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Gravity: </ion-label>{{p.gravity}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Terrain: </ion-label>{{p.terrain}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Surface Water: </ion-label>{{p.surface_water}}
+        </ion-item>
+
+        <ion-item  *ngIf="p.population != 'unknown'" >
+            <ion-label>Population: </ion-label>{{p.population}}
+        </ion-item>
+       
+
+       <!-- <ion-row *ngIf="p.residents.length">
+            <ion-label>residents: </ion-label>
+            <ion-list *ngFor="let actor of p.residents"> 
+                    <ion-item>
+                            <ion-button >{{actor}}</ion-button>
+                    </ion-item>
+            </ion-list>
+        </ion-row>-->
+
+    </ion-card>
+</ion-content>

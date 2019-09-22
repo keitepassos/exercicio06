@@ -3,17 +3,30 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title><ion-icon name="planet"></ion-icon>Planets keite</ion-title>
+    <ion-title><ion-icon name="planet"></ion-icon>Planets</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
- <!-- <ion-fab-button (click)="consultaPlanets('')">c</ion-fab-button>-->
-
+ 
  <ion-list>
   <ion-item *ngFor="let p of planetas.results" >
-    <ion-label>{{p?.name}}</ion-label>
+    <ion-label (click)="getPlanetOBJ(p)">{{p?.name}}</ion-label>
   </ion-item>
 </ion-list>
-
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button  *ngIf="planetas.previous != null" color="primary" (click)="consultaPlanets(planetas.previous)">
+        Previous Page
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button *ngIf="planetas.next != null" color="secondary" (click)="consultaPlanets(planetas.next)">
+        Next Page
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> 
+
