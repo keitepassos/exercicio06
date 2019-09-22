@@ -1,12 +1,33 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title><ion-icon name="film"></ion-icon>Films</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title><ion-icon name="film"></ion-icon>Films</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+   
+   <ion-list>
+    <ion-item *ngFor="let film of films.results" >
+      <ion-label (click)="getFilmsOBJ(film)">{{film?.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="secondary">
+        <ion-button  *ngIf="films.previous != null" color="primary" (click)="consultaFilms(films.previous)">
+          Previous Page
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button *ngIf="films.next != null" color="secondary" (click)="consultaFilms(films.next)">
+          Next Page
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer> 
+  
+  

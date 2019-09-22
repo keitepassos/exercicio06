@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Films Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-card>
+            <ion-item>
+              <ion-label>Title: </ion-label>{{film.title}}
+            </ion-item>
+            <ion-item>
+              <ion-label>Episode: </ion-label>{{film.episode_id}}
+            </ion-item>
+            <ion-item>
+                <ion-label>Opening Crawl: </ion-label>{{film.opening_crawl}}
+            </ion-item>
+          
+            <ion-item>
+                <ion-label>Director: </ion-label>{{film.director}}
+            </ion-item>
+            <ion-item>
+                 <ion-label>Release Date: </ion-label>{{film.release_date}}
+            </ion-item>
+          
+          
+          
+  
+          <ion-row *ngIf="film.characters.length > 0" >
+              <ion-label>Characters:  </ion-label>
+              <ion-list *ngFor="let characters of film.characters"> 
+                      <ion-item>
+                              <ion-button (click)="getSingleUrlData(characters,'card-details')" >Used Character</ion-button>
+                      </ion-item>
+              </ion-list>
+          </ion-row>
+  
+      </ion-card>
+        
+        
+  </ion-content>
+  

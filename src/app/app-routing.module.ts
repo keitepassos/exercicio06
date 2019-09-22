@@ -21,7 +21,9 @@ const routes: Routes = [
   { path: 'planets', loadChildren: './planets/planets.module#PlanetsPageModule' },
   { path: 'card-details/:actor', loadChildren: './card-details/card-details.module#CardDetailsPageModule' },
   { path: 'card-details-startship/:startship', loadChildren: './card-details-startship/card-details-startship.module#CardDetailsStartshipPageModule' },
-  { path: 'card-details-planets/:p', loadChildren: './card-details-planets/card-details-planets.module#CardDetailsPlanetsPageModule' }
+  { path: 'card-details-planets/:p', loadChildren: './card-details-planets/card-details-planets.module#CardDetailsPlanetsPageModule' },
+  { path: 'card-details-films/:film', loadChildren: './card-details-films/card-details-films.module#CardDetailsFilmsPageModule' }
+
 
 ];
 

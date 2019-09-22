@@ -3,10 +3,10 @@
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
-      <ion-title>Details</ion-title>
+      <ion-title>Planets Details</ion-title>
     </ion-toolbar>
   </ion-header>
-
+ 
 <ion-content>
     <ion-card>
         <ion-item>
@@ -39,14 +39,14 @@
         </ion-item>
        
 
-       <!-- <ion-row *ngIf="p.residents.length">
+        <ion-row *ngIf="p.residents.length">
             <ion-label>residents: </ion-label>
             <ion-list *ngFor="let actor of p.residents"> 
-                    <ion-item>
-                            <ion-button >{{actor}}</ion-button>
-                    </ion-item>
+                     <ion-item>
+                              <ion-button (click)="getSingleUrlData(actor,'card-details')" >Used People</ion-button>
+                      </ion-item>
             </ion-list>
-        </ion-row>-->
+        </ion-row>
 
     </ion-card>
 </ion-content>

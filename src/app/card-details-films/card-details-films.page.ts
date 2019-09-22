@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot,ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-card-details-planets',
-  templateUrl: './card-details-planets.page.html',
-  styleUrls: ['./card-details-planets.page.scss'],
+  selector: 'app-card-details-films',
+  templateUrl: './card-details-films.page.html',
+  styleUrls: ['./card-details-films.page.scss'],
 })
-export class CardDetailsPlanetsPage implements OnInit {
+export class CardDetailsFilmsPage implements OnInit {
 
  
-  p = null;
+  film = null;
 
   constructor(private activatedRoute: ActivatedRoute,private http: HttpClient, public router: Router) { 
-    this.p =  this.activatedRoute.snapshot.paramMap.get('p');
-    let dataObj = JSON.parse(this.p);
-    this.p = dataObj;
-    console.log(this.p);
+    this.film =  this.activatedRoute.snapshot.paramMap.get('film');
+    let dataObj = JSON.parse(this.film);
+    this.film = dataObj;
+    console.log(this.film);
     console.log(typeof(dataObj));
   }
 
@@ -36,7 +35,6 @@ export class CardDetailsPlanetsPage implements OnInit {
   getJsonStringify(obj:any){
     return JSON.stringify(obj);
   }
-
   ngOnInit() {
   }
 
