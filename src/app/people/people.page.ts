@@ -53,14 +53,16 @@ export class PeoplePage implements OnInit {
     );
   }
 
-  getActorOBJ(obj:any){
-
-    let dataString = JSON.stringify(obj);
-    this.router.navigate(['card-details',dataString])
+  getActorOBJ(obj:any) {
+    this.router.navigate(['card-details',this.getJsonStringify(obj)])
   }
 
   ngOnInit() {
     this.consultarPeople(this.url);
+  }
+
+  getJsonStringify(obj:any){
+    return JSON.stringify(obj);
   }
 
 }

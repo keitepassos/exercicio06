@@ -16,16 +16,17 @@ export class StartshipsPage implements OnInit  {
   }
 
   ngOnInit() {
-    this.consultarStartshps(this.url);
+    this.consultarStartships(this.url);
   }
 
   getActorOBJ(obj:any)
   {
     let dataString = JSON.stringify(obj);
+    console.log(dataString);
     this.router.navigate(['card-details-startship',dataString])
   }
 
-  consultarStartshps(pUrl:string){
+  consultarStartships(pUrl:string){
     let url : string = pUrl;
     console.log("Chamando "+url);
     this.http.get(url).subscribe(
