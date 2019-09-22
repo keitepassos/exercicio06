@@ -18,12 +18,12 @@
   <ion-footer>
     <ion-toolbar>
       <ion-buttons slot="secondary">
-        <ion-button  *ngIf="startships.previous != null" color="primary" (click)="consultarPeople(startships.previous)">
+        <ion-button  *ngIf="startships.previous != null" color="primary" (click)="consultarStartships(startships.previous)">
           Previous Page
         </ion-button>
       </ion-buttons>
       <ion-buttons slot="primary">
-        <ion-button *ngIf="startships.next != null" color="secondary" (click)="consultarPeople(startships.next)">
+        <ion-button *ngIf="startships.next != null" color="secondary" (click)="consultarStartships(startships.next)">
           Next Page
         </ion-button>
       </ion-buttons>

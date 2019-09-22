@@ -1,9 +1,60 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>card_details_startship</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Starship Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-card>
+        <ion-item>
+            <ion-label>Name: </ion-label>{{starship.name}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Model: </ion-label>{{starship.model}}
+        </ion-item>
+        <ion-item>
+          <ion-label>Manufacturer: </ion-label>{{starship.manufacturer}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Cost in Credits: </ion-label>{{starship.cost_in_credits}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Length: </ion-label>{{starship.length}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Max Atmosphering Speed: </ion-label>{{starship.max_atmosphering_speed}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Crew: </ion-label>{{starship.crew}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Passengers: </ion-label>{{starship.passengers}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Cargo Capacity: </ion-label>{{starship.cargo_capacity}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Consumables: </ion-label>{{starship.consumables}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Hyperdrive Rating: </ion-label>{{starship.hyperdrive_rating}}
+        </ion-item>
+        <ion-item>
+            <ion-label>MGLT: </ion-label>{{starship.passengers}}
+        </ion-item>
+        <ion-item>
+            <ion-label>Starship Class: </ion-label>{{starship.starship_class}}
+        </ion-item>
+        <ion-row *ngIf="starship.pilots.length > 0">
+            <ion-label>Pilots: </ion-label>
+            <ion-list *ngFor="let pilot of starship.pilots"> 
+                    <ion-item>
+                            <ion-button (click)="getSingleUrlData(pilot,'card-details')" >Pilot</ion-button>
+                    </ion-item>
+            </ion-list>
+        </ion-row>
+    </ion-card>
 </ion-content>

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Details</ion-title>
+    <ion-title>People Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -34,11 +34,11 @@
             <ion-label>Skin Color: </ion-label>{{actor.skin_color}}
         </ion-item>
 
-        <ion-row>
+        <ion-row *ngIf="actor.starships.length > 0" >
             <ion-label>Starships: </ion-label>
             <ion-list *ngFor="let starship of actor.starships"> 
                     <ion-item>
-                            <ion-button >{{starship}}</ion-button>
+                            <ion-button (click)="getSingleUrlData(starship,'card-details-startship')" >Used Starship</ion-button>
                     </ion-item>
             </ion-list>
         </ion-row>
