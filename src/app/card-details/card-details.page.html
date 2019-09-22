@@ -34,11 +34,27 @@
             <ion-label>Skin Color: </ion-label>{{actor.skin_color}}
         </ion-item>
 
+        <ion-label>Homeworld: </ion-label>
+        <ion-list > 
+            <ion-item>
+                    <ion-button (click)="getSingleUrlData(actor.homeworld,'card-details-planets')" >Homeworld</ion-button>
+            </ion-item>
+        </ion-list>
+
         <ion-row *ngIf="actor.starships.length > 0" >
             <ion-label>Starships: </ion-label>
             <ion-list *ngFor="let starship of actor.starships"> 
                     <ion-item>
                             <ion-button (click)="getSingleUrlData(starship,'card-details-startship')" >Used Starship</ion-button>
+                    </ion-item>
+            </ion-list>
+        </ion-row>
+
+        <ion-row *ngIf="actor.films.length > 0" >
+            <ion-label>Films: </ion-label>
+            <ion-list *ngFor="let film of actor.films"> 
+                    <ion-item>
+                            <ion-button (click)="getSingleUrlData(film,'card-details-films')" >Film</ion-button>
                     </ion-item>
             </ion-list>
         </ion-row>

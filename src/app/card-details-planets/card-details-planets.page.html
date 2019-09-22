@@ -40,10 +40,19 @@
        
 
         <ion-row *ngIf="p.residents.length">
-            <ion-label>residents: </ion-label>
+            <ion-label>Residents: </ion-label>
             <ion-list *ngFor="let actor of p.residents"> 
                      <ion-item>
                               <ion-button (click)="getSingleUrlData(actor,'card-details')" >Used People</ion-button>
+                      </ion-item>
+            </ion-list>
+        </ion-row>
+
+        <ion-row *ngIf="p.films.length">
+            <ion-label>Films: </ion-label>
+            <ion-list *ngFor="let film of p.films"> 
+                     <ion-item>
+                              <ion-button (click)="getSingleUrlData(film,'card-details-films')" >Films</ion-button>
                       </ion-item>
             </ion-list>
         </ion-row>

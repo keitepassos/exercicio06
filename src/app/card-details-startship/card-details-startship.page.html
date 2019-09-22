@@ -51,10 +51,18 @@
         <ion-row *ngIf="starship.pilots.length > 0">
             <ion-label>Pilots: </ion-label>
             <ion-list *ngFor="let pilot of starship.pilots"> 
-                    <ion-item>
-                            <ion-button (click)="getSingleUrlData(pilot,'card-details')" >Pilot</ion-button>
-                    </ion-item>
+                <ion-item>
+                        <ion-button  (click)="getSingleUrlData(pilot,'card-details')" >Pilot</ion-button>
+                </ion-item>
             </ion-list>
         </ion-row>
+        <ion-row *ngIf="starship.films.length > 0">
+                <ion-label>Films: </ion-label>
+                <ion-list *ngFor="let film of starship.films"> 
+                    <ion-item>
+                            <ion-button  (click)="getSingleUrlData(film,'card-details-films')" >Films</ion-button>
+                    </ion-item>
+                </ion-list>
+            </ion-row>        
     </ion-card>
 </ion-content>

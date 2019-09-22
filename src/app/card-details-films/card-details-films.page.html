@@ -25,15 +25,30 @@
             <ion-item>
                  <ion-label>Release Date: </ion-label>{{film.release_date}}
             </ion-item>
-          
-          
-          
   
           <ion-row *ngIf="film.characters.length > 0" >
               <ion-label>Characters:  </ion-label>
               <ion-list *ngFor="let characters of film.characters"> 
                       <ion-item>
-                              <ion-button (click)="getSingleUrlData(characters,'card-details')" >Used Character</ion-button>
+                              <ion-button (click)="getSingleUrlData(characters,'card-details')" >Characters</ion-button>
+                      </ion-item>
+              </ion-list>
+          </ion-row>
+
+          <ion-row *ngIf="film.planets.length > 0" >
+              <ion-label>Planets: </ion-label>
+              <ion-list *ngFor="let planet of film.planets"> 
+                      <ion-item>
+                              <ion-button (click)="getSingleUrlData(planet,'card-details-planets')" >Planets</ion-button>
+                      </ion-item>
+              </ion-list>
+          </ion-row>
+
+          <ion-row *ngIf="film.starships.length > 0" >
+              <ion-label>Starships: </ion-label>
+              <ion-list *ngFor="let starship of film.starships"> 
+                      <ion-item>
+                              <ion-button (click)="getSingleUrlData(starship,'card-details-startship')" >Starship</ion-button>
                       </ion-item>
               </ion-list>
           </ion-row>
